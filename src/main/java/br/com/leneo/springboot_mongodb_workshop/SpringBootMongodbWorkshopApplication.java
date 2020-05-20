@@ -1,4 +1,4 @@
-package br.com.leneo.springbootmongodbworkshop;
+package br.com.leneo.springboot_mongodb_workshop;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
