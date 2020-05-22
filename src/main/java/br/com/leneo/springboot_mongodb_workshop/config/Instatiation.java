@@ -16,9 +16,9 @@ public class Instatiation implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        User maria = new User(null, "Maria", "maria@gmail.com");
-        User pedro = new User(null, "Pedro", "pedro@gmail.com");
-        User joao = new User(null, "João", "joao@gmail.com");
-        repository.saveAll(Arrays.asList(maria, pedro, joao));
+//        User maria = new User(null, "Maria", "maria@gmail.com");
+//        User pedro = new User(null, "Pedro", "pedro@gmail.com");
+//        User joao = new User(null, "João", "joao@gmail.com");
+//        repository.saveAll(Arrays.asList(maria, pedro, joao));
     }
 }
