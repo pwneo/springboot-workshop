@@ -42,4 +42,9 @@ public class UserService {
     public User fromDTOUser(UserDTO objDto) {
         return new User(objDto.getId(), objDto.getName(), objDto.getEmail());
     }
+
+
+    public User findByName(String name){
+        return this.repository.findByNameLike(name);
+    }
 }

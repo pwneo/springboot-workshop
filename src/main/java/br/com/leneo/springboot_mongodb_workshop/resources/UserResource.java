@@ -70,4 +70,9 @@ public class UserResource {
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(user.getId()).toUri();
         return ResponseEntity.created(uri).body(new UserDTO(user));
     }
+
+    @GetMapping(value = "/name/{id}")
+    public ResponseEntity<UserDTO> findByName(String id) {
+        return ResponseEntity.ok().body(new UserDTO(this.userService.findByName(id)));
+    }
 }
