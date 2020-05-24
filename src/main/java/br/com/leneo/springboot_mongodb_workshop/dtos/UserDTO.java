@@ -1,23 +1,23 @@
-package br.com.leneo.springboot_mongodb_workshop.dto;
+package br.com.leneo.springboot_mongodb_workshop.dtos;
 
 import br.com.leneo.springboot_mongodb_workshop.domains.User;
 
 import java.io.Serializable;
 
 public class UserDTO implements Serializable {
-    private static final Long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
     private String id;
     private String name;
     private String email;
 
-    public UserDTO(User user) {
-        this.id = user.getId();
-        this.name = user.getName();
-        this.email = user.getEmail();
+    public UserDTO() {
     }
 
-    public UserDTO() {
+    public UserDTO(User obj) {
+        id = obj.getId();
+        name = obj.getName();
+        email = obj.getEmail();
     }
 
     public String getId() {
@@ -42,11 +42,5 @@ public class UserDTO implements Serializable {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public void toUserDTOFrom(User user){
-        this.id = user.getId();
-        this.name = user.getName();
-        this.email = user.getEmail();
     }
 }

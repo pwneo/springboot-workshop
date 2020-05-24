@@ -1,12 +1,15 @@
 package br.com.leneo.springboot_mongodb_workshop.domains;
 
-import br.com.leneo.springboot_mongodb_workshop.dto.AuthorDTO;
+import br.com.leneo.springboot_mongodb_workshop.dtos.AuthorDTO;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 @Document
 public class Post implements Serializable {
@@ -18,6 +21,9 @@ public class Post implements Serializable {
     private String title;
     private String body;
     private AuthorDTO author;
+
+    @DBRef
+    private Set<Comment> comments = new HashSet<>();
 
     public Post(String id, Date date, String title, String body, AuthorDTO author) {
         this.id = id;
@@ -68,6 +74,14 @@ public class Post implements Serializable {
 
     public void setAuthor(AuthorDTO author) {
         this.author = author;
+    }
+
+    public Set<Comment> getComments() {
+        return comments;
+    }
+
+    public void setComments(Set<Comment> comments) {
+        this.comments = comments;
     }
 
     @Override
